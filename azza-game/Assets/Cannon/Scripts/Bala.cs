@@ -5,21 +5,29 @@ using UnityEngine;
 public class Bala : MonoBehaviour
 {
 
-public float speed;
-public Vector3 direction;
-public float damage;
+    public float speed;
+    public Vector3 direction;
+    public float damage = 10f;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         speed = 2f;
-        direction = new Vector3 (0, 0, 1);
+        direction = new Vector3(0, 0, 1);
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(direction * speed * Time.deltaTime);
-        
+
+        Destroy(gameObject, 5f);
+
     }
+
 }
+

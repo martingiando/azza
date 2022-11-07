@@ -5,9 +5,15 @@ public class Player : MonoBehaviour
   public float ForceAmount = 4f;
   public Rigidbody rb;
   public Animator anim;
+
+  public float life = 100f;
+
+  Vector3 posInicial;
+
+  
   void Start()
   {
-
+    posInicial = transform.position;
   }
   void Update()
   {
@@ -47,6 +53,49 @@ public class Player : MonoBehaviour
     if (Input.GetKeyUp(KeyCode.S))
     {
       anim.SetBool("isWalkingBack", false);
+    }
+  }
+
+  void Respawn()
+  {
+    transform.position = posInicial;
+    life = 100f;
+  }
+
+  private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Bala")
+    {
+      life -= 50f;
+      Debug.Log("The Player has been hit!");
+      Destroy(other.gameObject);
+      if (life <= 0)
+      {
+        Respawn();
+        Debug.Log("Game Over!");
+      }
+    }
+
+       if (other.gameObject.tag == "BalaHall")
+    {
+      life -= 30f;
+      Debug.Log("The Player has been hit!");
+      Destroy(other.gameObject);
+      if (life <= 0)
+      {
+        Respawn();
+        Debug.Log("Game Over!");
+      }
+    }
+     }
+
+
+
+  private void OnTriggerEnter(Collider other){
+    if (other.gameObject.tag == "Coin")
+    {
+      Destroy(other.gameObject);
+      Debug.Log("You got a coin!");
     }
   }
 
