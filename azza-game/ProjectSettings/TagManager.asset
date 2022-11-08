@@ -7,6 +7,7 @@ TagManager:
   - Bala
   - Coin
   - BalaHall
+  - Wall
   layers:
   - Default
   - TransparentFX
