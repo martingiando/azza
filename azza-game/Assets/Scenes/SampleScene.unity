@@ -318,8 +318,8 @@ GameObject:
   - component: {fileID: 678866023}
   - component: {fileID: 678866022}
   - component: {fileID: 678866021}
-  - component: {fileID: 678866020}
   - component: {fileID: 678866025}
+  - component: {fileID: 678866026}
   m_Layer: 0
   m_Name: Granade
   m_TagString: Untagged
@@ -327,19 +327,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &678866020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 678866019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15b88142d94fc024585b83b1b7e5b53e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 30
 --- !u!136 &678866021
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -435,6 +422,21 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &678866026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678866019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15b88142d94fc024585b83b1b7e5b53e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  enemyType: 0
+  Damage: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
